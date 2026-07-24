@@ -1,0 +1,270 @@
+.term-section {
+  padding: 22px var(--space-panel);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section-path {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.section-heading {
+  margin: 14px 0 4px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-text);
+}
+
+.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-card {
+  display: block;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 13px 15px;
+  margin-top: 10px;
+  color: inherit;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.project-card:hover,
+.project-card:focus-visible,
+.project-card:active {
+  border-color: var(--color-crimson);
+  background: var(--color-surface-hover);
+  color: inherit;
+}
+
+.project-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.project-name {
+  color: var(--color-accent);
+  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 16px;
+}
+
+.project-tags {
+  font-size: 12px;
+}
+
+.project-desc {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.about-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 60ch;
+  text-wrap: pretty;
+}
+
+.about-note {
+  margin: 10px 0 0;
+  font-size: 13px;
+}
+
+.status-table {
+  margin: 0;
+  font: 13px/1.55 var(--font-body);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.status-row {
+  display: grid;
+  /* 1fr keeps the command row full-width when stacked on mobile */
+  grid-template-columns: 3.5ch 5ch 4ch minmax(0, 1fr);
+  column-gap: 10px;
+  row-gap: 2px;
+  align-items: baseline;
+}
+
+.status-row--head {
+  margin-bottom: -2px;
+}
+
+.status-cmd-label {
+  display: none;
+}
+
+.status-cmd {
+  grid-column: 1 / -1;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.55em;
+}
+
+.status-flag {
+  white-space: nowrap;
+  color: var(--color-text);
+}
+
+@media (min-width: 480px) {
+  .status-table {
+    gap: 2px;
+    line-height: 1.9;
+  }
+
+  .status-row {
+    grid-template-columns: 4ch 5.5ch 5ch minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 0;
+  }
+
+  .status-cmd-label {
+    display: block;
+  }
+
+  .status-cmd {
+    grid-column: auto;
+  }
+}
+
+.site-footer {
+  padding: 18px var(--space-panel);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-surface-raised);
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  align-items: center;
+}
+
+.footer-icon-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-muted);
+  transition: color var(--duration-fast);
+}
+
+.footer-icon-link:hover {
+  color: var(--color-accent);
+}
+
+.footer-note {
+  font-size: 12px;
+}
+
+/* ── Stats section ──────────────────────────────────────── */
+
+.stats-wrap {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hack-row {
+  display: grid;
+  grid-template-columns: 5ch 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  row-gap: 2px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.hack-place {
+  grid-row: 1 / 3;
+  align-self: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.hack-project {
+  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 14px;
+}
+
+.hack-event {
+  font-size: 12px;
+  grid-column: 2;
+}
+
+.hack-track {
+  opacity: 0.75;
+}
+
+.hack-teams {
+  opacity: 0.6;
+}
+
+.hack-date {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .hack-row {
+    grid-template-columns: 5ch 1fr auto;
+    grid-template-rows: auto auto;
+  }
+
+  .hack-date {
+    display: block;
+    grid-column: 3;
+    grid-row: 1;
+    align-self: center;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+}
+
+.stat-counts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 16px;
+}
+
+.stat-count-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-count-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.stat-count-label {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}

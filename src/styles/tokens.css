@@ -1,0 +1,24 @@
+:root {
+  --color-bg: #050706;
+  --color-surface: #0b0e0c;
+  --color-surface-raised: #0e120f;
+  --color-surface-hover: #120d0f;
+  --color-border: #2a322c;
+  --color-text: #c9d1c7;
+  --color-muted: #6e7a70;
+  --color-accent: #e8a33d;
+  --color-crimson: #8c3f4d;
+
+  --font-display: 'JetBrains Mono', ui-monospace, monospace;
+  --font-body: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-label: 'Space Mono', ui-monospace, monospace;
+
+  --text-hero: clamp(2.25rem, 10vw, 2.875rem);
+
+  --space-panel: clamp(1.125rem, 4.5vw, 1.5rem);
+  --rail-width: 26px;
+
+  --duration-fast: 160ms;
+  --duration-normal: 300ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}

@@ -1,0 +1,90 @@
+.term-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--color-surface-raised);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.term-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.term-dot--crimson {
+  background: var(--color-crimson);
+}
+
+.term-dot--amber {
+  background: var(--color-accent);
+}
+
+.term-dot--sage {
+  background: var(--color-muted);
+}
+
+.term-title {
+  margin-left: 8px;
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.term-prompt {
+  font-size: 15px;
+}
+
+.iterm {
+  margin-top: 18px;
+  cursor: text;
+}
+
+.iterm-line {
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.iterm-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.iterm-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-text);
+  /* 16px minimum so iOS Safari does not zoom the page on focus. */
+  font: 16px var(--font-body);
+  caret-color: var(--color-accent);
+}
+
+.iterm-input::placeholder {
+  color: var(--color-muted);
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.iterm-cursor {
+  width: 9px;
+  height: 17px;
+  background: var(--color-accent);
+  animation: blink 1.06s steps(1) infinite;
+  flex: none;
+}
+
+.iterm-row:focus-within .iterm-cursor {
+  display: none;
+}
