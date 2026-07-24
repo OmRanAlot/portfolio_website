@@ -45,13 +45,13 @@ export const PROFILE = {
     name: 'break/',
     tags: '[ Android · Kotlin · AccessibilityService ]',
     description: 'Surgically blocks Instagram Reels and YouTube Shorts without blocking the full apps — no willpower required, just architecture.',
-    href: '#',
+    href: 'https://github.com/OmRanAlot/Break',
   },
   {
     name: 'drift/',
     tags: '[ C++ · pybind11 · React · Supabase ]',
     description: 'Monte Carlo stock trend simulator combining regime-switching GBM, GARCH volatility, and jump-diffusion — C++ core exposed to a Python/React dashboard.',
-    href: '#',
+    href: 'https://github.com/OmRanAlot/Drift',
   },
   {
     name: 'seamless/',
