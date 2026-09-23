@@ -28,11 +28,11 @@ export const PROFILE = {
       icon: 'linkedin',
     },
     {
-      short: 'instagram',
-      label: 'instagram.com/omranakilometer',
-      href: 'https://instagram.com/omranakilometer',
+      short: 'devpost',
+      label: 'devpost.com/omjrana1010',
+      href: 'https://devpost.com/omjrana1010',
       external: true,
-      icon: 'instagram',
+      icon: 'devpost',
     },
     {
       short: 'email',
@@ -69,6 +69,34 @@ export const PROFILE = {
   about:
     'CS + Math student at NJIT. Love solving problems and puzzles. Math enthusiast. Chess player. Currently learning machine learning, Putnam, and ICPC.',
   aboutNote: '// currently exploring ML research',
+  skills: {
+    Languages: ['Python', 'C++', 'Java', 'JavaScript', 'HTML', 'CSS'],
+    'Data Science & ML': [
+      'NumPy',
+      'Pandas',
+      'scikit-learn',
+      'Plotly',
+      'Jupyter',
+      'Selenium',
+    ],
+    'Web & Backend': [
+      'React',
+      'React Native',
+      'FastAPI',
+      'Flask',
+      'Node.js',
+      'Supabase',
+      'MongoDB',
+    ],
+    'AI & Agentic Tools': [
+      'Claude',
+      'Cursor',
+      'Gemini',
+      'GitHub Copilot',
+      'Windsurf',
+      'Bolt',
+    ],
+  },
   processes: [
     { pid: '1337', stat: 'R+', command: 'gdg-tech-lead', flag: '--active' },
     { pid: '0451', stat: 'D', command: 'ml-research', flag: '--seeking' },

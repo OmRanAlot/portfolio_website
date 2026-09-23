@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useReducedMotion } from 'framer-motion';
+import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion.js';
 import './ascii.css';
 
 const WIDTH = 30;
@@ -57,7 +57,7 @@ function renderDonut(A, B) {
 }
 
 export default function AsciiDonut() {
-  const reduce = useReducedMotion();
+  const reduce = usePrefersReducedMotion();
   const [frame, setFrame] = useState(() => renderDonut(1, 1));
   const anglesRef = useRef({ A: 1, B: 1 });
 

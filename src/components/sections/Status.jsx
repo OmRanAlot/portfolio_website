@@ -20,7 +20,7 @@ export default function Status() {
           </span>
         </div>
         {PROFILE.processes.map((proc) => (
-          <div className="status-row" role="row" key={proc.pid}>
+          <div className="status-row" role="row" key={proc.pid} data-gsap-card>
             <span role="cell">om</span>
             <span role="cell">{proc.pid}</span>
             <span role="cell">{proc.stat}</span>

@@ -19,9 +19,9 @@ export default function App() {
         <div className="terminal-card">
           <TerminalHeader title={PROFILE.sessionTitle} />
           <Hero />
-          <Stats />
-          <Projects />
           <About />
+          <Projects />
+          <Stats />
           <Status />
           <Footer />
         </div>

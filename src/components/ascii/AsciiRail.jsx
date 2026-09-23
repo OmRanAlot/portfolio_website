@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useReducedMotion } from 'framer-motion';
+import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion.js';
 import { RAIL_GLYPHS } from './streams.js';
 import './ascii.css';
 
@@ -15,7 +15,7 @@ function seedRows() {
 }
 
 export default function AsciiRail() {
-  const reduce = useReducedMotion();
+  const reduce = usePrefersReducedMotion();
   const [rows, setRows] = useState(seedRows);
 
   useEffect(() => {

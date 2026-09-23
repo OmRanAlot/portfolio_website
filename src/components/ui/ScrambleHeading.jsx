@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useReducedMotion } from 'framer-motion';
+import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion.js';
 
 const GLYPHS = '#$%&@!?/\\<>*+=';
 const SCRAMBLE_FRAMES = 12;
@@ -19,7 +19,7 @@ function scrambleFrame(text, frame) {
 
 export default function ScrambleHeading({ text }) {
   const ref = useRef(null);
-  const reduce = useReducedMotion();
+  const reduce = usePrefersReducedMotion();
   const [display, setDisplay] = useState(text);
 
   useEffect(() => {

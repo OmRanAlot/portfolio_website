@@ -15,10 +15,35 @@
 
   --text-hero: clamp(2.25rem, 10vw, 2.875rem);
 
+  /* Mobile defaults — desktop overrides live in the media query below */
   --space-panel: clamp(1.125rem, 4.5vw, 1.5rem);
   --rail-width: 26px;
+  --terminal-max: 640px;
+  --section-pad-y: 22px;
+  --heading-size: 20px;
+  --body-size: 0.9375rem;
 
   --duration-fast: 160ms;
   --duration-normal: 300ms;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Laptop / desktop shell */
+@media (min-width: 768px) {
+  :root {
+    --space-panel: 1.75rem;
+    --rail-width: 32px;
+    --terminal-max: 920px;
+    --section-pad-y: 28px;
+    --heading-size: 24px;
+    --body-size: 1rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  :root {
+    --space-panel: 2rem;
+    --terminal-max: 980px;
+    --section-pad-y: 32px;
+  }
 }

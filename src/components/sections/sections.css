@@ -1,5 +1,5 @@
 .term-section {
-  padding: 22px var(--space-panel);
+  padding: var(--section-pad-y) var(--space-panel);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -12,7 +12,7 @@
   margin: 14px 0 4px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 20px;
+  font-size: var(--heading-size);
   color: var(--color-text);
 }
 
@@ -31,15 +31,75 @@
   color: inherit;
   transition:
     border-color 0.2s,
-    background 0.2s;
+    background 0.2s,
+    transform 0.15s ease;
+  will-change: transform, opacity;
 }
 
 .project-card:hover,
-.project-card:focus-visible,
+.project-card:focus-visible {
+  border-color: var(--color-crimson);
+  background: var(--color-surface-hover);
+  color: inherit;
+}
+
 .project-card:active {
   border-color: var(--color-crimson);
   background: var(--color-surface-hover);
   color: inherit;
+  transform: scale(0.98);
+}
+
+[data-gsap-card] {
+  will-change: transform, opacity;
+}
+
+.terminal-print {
+  white-space: pre-wrap;
+}
+
+.terminal-caret {
+  display: inline-block;
+  width: 0.55ch;
+  height: 1.05em;
+  margin-left: 1px;
+  vertical-align: text-bottom;
+  background: var(--color-accent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.term-prompt:has([data-gsap-command]:empty) .terminal-caret,
+.term-prompt:has([data-gsap-command].is-printing) .terminal-caret,
+.section-heading:has([data-gsap-heading]:empty) .terminal-caret,
+.section-heading:has([data-gsap-heading].is-printing) .terminal-caret,
+.about-text:has([data-gsap-print]:empty) .terminal-caret,
+.about-text:has([data-gsap-print].is-printing) .terminal-caret {
+  opacity: 1;
+  animation: terminal-caret-blink 1s steps(1) infinite;
+}
+
+@keyframes terminal-caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-caret {
+    animation: none;
+    opacity: 0;
+  }
+
+  [data-gsap-card],
+  .project-card {
+    will-change: auto;
+  }
 }
 
 .project-head {
@@ -267,4 +327,151 @@
 .stat-count-label {
   font-size: 11px;
   letter-spacing: 0.04em;
+}
+
+/* ── Laptop / desktop ───────────────────────────────────── */
+
+@media (min-width: 768px) {
+  .section-path {
+    font-size: 14px;
+  }
+
+  .section-heading {
+    margin: 16px 0 8px;
+  }
+
+  .project-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .project-list > li {
+    display: flex;
+    min-height: 100%;
+  }
+
+  .project-card {
+    margin-top: 0;
+    flex: 1;
+    padding: 16px 18px;
+    border-radius: 5px;
+  }
+
+  .project-name {
+    font-size: 17px;
+  }
+
+  .project-tags {
+    font-size: 12px;
+    text-align: right;
+  }
+
+  .project-desc {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .about-text {
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 68ch;
+  }
+
+  .about-note {
+    margin-top: 12px;
+    font-size: 14px;
+  }
+
+  .status-table {
+    font-size: 14px;
+    gap: 4px;
+    line-height: 2;
+  }
+
+  .status-row {
+    grid-template-columns: 4.5ch 6ch 5.5ch minmax(0, 1fr);
+    column-gap: 16px;
+  }
+
+  .stats-wrap {
+    gap: 24px;
+  }
+
+  .hack-list {
+    gap: 12px;
+  }
+
+  .hack-row {
+    grid-template-columns: 5.5ch minmax(0, 1fr) auto;
+    column-gap: 14px;
+    font-size: 14px;
+    padding: 8px 10px;
+    margin: 0 -10px;
+    border-radius: 4px;
+    transition: background 0.15s ease;
+  }
+
+  .hack-row:hover {
+    background: var(--color-surface-hover);
+  }
+
+  .hack-place {
+    font-size: 13px;
+  }
+
+  .hack-project {
+    font-size: 15px;
+  }
+
+  .hack-event {
+    font-size: 13px;
+  }
+
+  .hack-date {
+    font-size: 12px;
+  }
+
+  .stat-counts {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px 24px;
+    padding-top: 20px;
+  }
+
+  .stat-count-value {
+    font-size: 28px;
+  }
+
+  .stat-count-label {
+    font-size: 12px;
+  }
+
+  .site-footer {
+    padding: 22px var(--space-panel);
+  }
+
+  .footer-links {
+    gap: 20px;
+    font-size: 15px;
+  }
+
+  .footer-note {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .project-list {
+    gap: 14px;
+  }
+
+  .project-card {
+    padding: 18px 20px;
+  }
+
+  .stat-count-value {
+    font-size: 30px;
+  }
 }

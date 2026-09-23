@@ -8,6 +8,7 @@ const HELP_LINES = [
   'available commands:',
   '  help          show this list',
   '  whoami        who is om?',
+  '  skills        tech stack + tools',
   '  ls            list projects',
   '  links         contact + socials',
   '  status        what om is up to',
@@ -15,10 +16,22 @@ const HELP_LINES = [
   '  clear         wipe the screen',
 ];
 
+function formatSkills() {
+  const lines = [];
+  for (const [group, items] of Object.entries(PROFILE.skills)) {
+    lines.push(`${group}:`);
+    lines.push(`  ${items.join(' · ')}`);
+  }
+  return lines;
+}
+
 function resolveCommand(raw) {
   const cmd = raw.toLowerCase();
   if (cmd === 'help') return HELP_LINES;
   if (cmd === 'whoami') return [`${PROFILE.name} — ${PROFILE.title}`];
+  if (cmd === 'skills' || cmd === 'skill' || cmd === 'stack') {
+    return formatSkills();
+  }
   if (cmd === 'ls' || cmd === 'projects' || cmd === 'ls projects/') {
     return PROFILE.projects.map((p) => p.name);
   }

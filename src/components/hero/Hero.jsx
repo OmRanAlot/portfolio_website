@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useReducedMotion } from 'framer-motion';
 import { PROFILE } from '../../data/profile.js';
 import { FIGLET_NAME } from '../../data/figlet.js';
+import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion.js';
 import { useTypewriter } from '../../hooks/useTypewriter.js';
 import AsciiDonut from '../ascii/AsciiDonut.jsx';
 import InteractiveTerminal from '../terminal/InteractiveTerminal.jsx';
@@ -55,7 +55,7 @@ function BootPrompt({ idx, step, advance, command }) {
 }
 
 export default function Hero() {
-  const reduce = useReducedMotion();
+  const reduce = usePrefersReducedMotion();
   const [step, setStep] = useState(() => (reduce ? TOTAL_STEPS : 0));
   const advance = useCallback(() => setStep((s) => s + 1), []);
 
