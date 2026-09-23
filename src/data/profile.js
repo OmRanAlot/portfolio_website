@@ -42,6 +42,11 @@ export const PROFILE = {
   ],
   projects: [
   {
+    name: 'pokemon-rl/',
+    tags: '[ Python · PyTorch · poke-env · Pokémon Showdown · Sept. 2026 ]',
+    description: 'Parsed and encoded 2.5M+ human replay state-action pairs into sharded binary files for training a behavior-cloned policy through poke-env. Designed the transition to online self-play RL with constrained Gen 9 Random Battle and fixed-level championship singles formats.',
+    href: 'https://github.com/OmRanAlot/PokeMonRL',
+  },{
     name: 'break/',
     tags: '[ Android · Kotlin · AccessibilityService ]',
     description: 'Surgically blocks Instagram Reels and YouTube Shorts without blocking the full apps — no willpower required, just architecture.',
@@ -65,10 +70,11 @@ export const PROFILE = {
     description: 'Competitive Battlesnake bot — bitboard-based minimax with alpha-beta pruning and Voronoi territory evaluation, called from Python via ctypes.',
     href: 'https://github.com/OmRanAlot/njit-battlesnake',
   },
+  
 ],
   about:
-    'CS + Math student at NJIT. Love solving problems and puzzles. Math enthusiast. Chess player. Currently learning machine learning, Putnam, and ICPC.',
-  aboutNote: '// currently exploring ML research',
+    'CS + Math student at NJIT. Love solving problems and puzzles. Math enthusiast and chess player. Social Media Chair for Pi-landers, NJIT\'s math club. Researching language model interpretability with my ML professor, focusing on where and how models form connections.',
+  aboutNote: '// currently exploring ML interpretability',
   skills: {
     Languages: ['Python', 'C++', 'Java', 'JavaScript', 'HTML', 'CSS'],
     'Data Science & ML': [
@@ -99,7 +105,8 @@ export const PROFILE = {
   },
   processes: [
     { pid: '1337', stat: 'R+', command: 'gdg-tech-lead', flag: '--active' },
-    { pid: '0451', stat: 'D', command: 'ml-research', flag: '--seeking' },
+    { pid: '0451', stat: 'R+', command: 'ml-interpretability', flag: '--active' },
+    { pid: '2718', stat: 'R+', command: 'pi-landers-social', flag: '--chair' },
     { pid: '2048', stat: 'R+', command: './break', flag: '--building' },
   ],
   footerNote: '// om rana — 2026',
